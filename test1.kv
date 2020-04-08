@@ -1,0 +1,19 @@
+#: kivy 2.0.0
+
+<CoinTossGame>:
+	orientation: 'vertical'
+	Label:
+        text: "Chose Heads or Tails"
+        font_size: 50
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: 'Heads'
+            on_release: root.win_lose('head')
+        Button:
+            text: 'Tails'
+            on_release: root.win_lose('tail')
+    Label:
+        id: result_label
+        font_size: 40
+        text: ''
