@@ -9,24 +9,22 @@ class CoinTossGame(BoxLayout):
 		head = 1
 		tail = 0
 		result = randrange(2)
-		if result == self.head:
+		if result == head:
 			return "head"
-		if result == self.tail:
+		if result == tail:
 			return "tail"
 
 	def win_lose(self, choice):
-		if choice == flip_coin():
+		if choice == CoinTossGame().flip_coin():
 			self.ids.result_label.text = "You guessed correctly {}".format(choice)
 		else:
 			self.ids.result_label.text = "It was actually {}, you lose!".format(choice)
 
 
-
 class TestApp(App):
 
 	def build(self):
-		rootwidget = CoinTossGame()
-		return rootwidget
+		return CoinTossGame()
 
 if __name__ == '__main__':
 	TestApp().run()
